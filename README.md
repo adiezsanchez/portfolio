@@ -60,4 +60,4 @@ If Pages is still pointing at a branch/`/docs` folder, switch it to GitHub Actio
 
 Identity, roles, education, projects, publications, and skills are taken from the provided CV text. Publication titles and DOIs are the official records for those same papers. The CEMIR / St. Olav’s role is dated **Prior to 2024** (no invented months).
 
-Hero and Contact social pills include brand icons for LinkedIn, GitHub, NTNU (official mark from [ntnu.edu](https://www.ntnu.edu/)), and ORCID (green iD icon from [orcid.org](https://orcid.org/)).
+Hero and Contact social pills include monochrome LinkedIn, GitHub, NTNU, and ORCID marks (icon + label in a single chip). Icons inherit the pill text color in light and dark mode.

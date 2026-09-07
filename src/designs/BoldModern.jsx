@@ -18,19 +18,19 @@ function SocialLinks({ className }) {
     <div className={className}>
       <a href={links.linkedin} target="_blank" rel="noreferrer">
         <LinkedInIcon />
-        <span>LinkedIn</span>
+        LinkedIn
       </a>
       <a href={links.github} target="_blank" rel="noreferrer">
         <GitHubIcon />
-        <span>GitHub</span>
+        GitHub
       </a>
       <a href={links.ntnu} target="_blank" rel="noreferrer">
         <NtnuIcon />
-        <span>NTNU</span>
+        NTNU
       </a>
       <a href={links.orcid} target="_blank" rel="noreferrer">
         <OrcidIcon />
-        <span>ORCID</span>
+        ORCID
       </a>
     </div>
   )
