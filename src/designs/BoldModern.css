@@ -1,7 +1,7 @@
 .bold {
   min-height: 100vh;
-  background: #f6f1ea;
-  color: #14110f;
+  background: var(--bg);
+  color: var(--fg);
   font-family: 'Manrope', system-ui, sans-serif;
 }
 
@@ -13,8 +13,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 5vw;
-  background: rgba(246, 241, 234, 0.9);
-  border-bottom: 2px solid #14110f;
+  background: var(--nav-bg);
+  border-bottom: 2px solid var(--border);
+  backdrop-filter: blur(12px);
 }
 
 .bold-logo {
@@ -23,11 +24,13 @@
   font-size: 1.3rem;
   text-decoration: none;
   letter-spacing: -0.04em;
+  color: var(--fg);
 }
 
 .bold-nav nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.2rem 1.1rem;
 }
 
@@ -39,20 +42,38 @@
   cursor: pointer;
   padding: 0;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .bold-nav nav a:hover,
 .bold-nav nav button:hover {
-  color: #e85c3a;
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.bold-theme {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800 !important;
+  border: 2px solid var(--accent) !important;
+  border-radius: 999px;
+  padding: 0.28rem 0.75rem 0.28rem 0.5rem !important;
+  text-decoration: none !important;
+}
+
+.bold-theme svg {
+  flex-shrink: 0;
 }
 
 .bold-burger {
   display: none;
   width: 44px;
   height: 44px;
-  border: 2px solid #14110f;
-  background: #fff;
+  border: 2px solid var(--border);
+  background: var(--card);
 }
 
 .bold-burger span {
@@ -60,7 +81,7 @@
   width: 18px;
   height: 2px;
   margin: 4px auto;
-  background: #14110f;
+  background: var(--fg);
 }
 
 .bold-hero {
@@ -73,6 +94,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.82rem;
+  color: var(--accent);
 }
 
 .bold h1 {
@@ -91,12 +113,12 @@
   align-items: start;
 }
 
-.bold-hero img {
+.bold-hero-row > img {
   width: 280px;
   height: 280px;
   object-fit: cover;
   border-radius: 28px;
-  border: 3px solid #14110f;
+  border: 3px solid var(--border);
 }
 
 .bold-tag {
@@ -122,19 +144,50 @@
 
 .bold-chips a,
 .bold-chips span {
-  border: 2px solid #14110f;
+  border: 2px solid var(--border);
   border-radius: 999px;
   padding: 0.35rem 0.8rem;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;
-  background: #fff;
+  background: var(--card);
+  color: var(--fg);
+}
+
+.bold-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.brand-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+}
+
+.brand-github {
+  color: #181717;
+}
+
+:root[data-theme='dark'] .brand-github {
+  color: #f6f1ea;
+}
+
+.brand-ntnu {
+  border-radius: 4px;
 }
 
 .bold-chips a:hover {
-  background: #e85c3a;
-  color: #fff;
-  border-color: #e85c3a;
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
+.bold-chips a:hover .brand-github {
+  color: var(--accent-fg);
 }
 
 .bold-block {
@@ -170,8 +223,8 @@
 .bold-edu article,
 .bold-projects a,
 .bold-pubs a {
-  background: #fff;
-  border: 2px solid #14110f;
+  background: var(--card);
+  border: 2px solid var(--border);
   border-radius: 20px;
   padding: 1.2rem 1.25rem 1.3rem;
   text-decoration: none;
@@ -186,19 +239,19 @@
 .bold-pubs a:hover,
 .bold-cards article:hover {
   transform: translateY(-6px);
-  box-shadow: 8px 8px 0 #14110f;
+  box-shadow: 8px 8px 0 var(--shadow);
 }
 
 .bold-cards p,
 .bold-edu p {
   margin: 0;
   font-weight: 700;
-  color: #e85c3a;
+  color: var(--accent);
   font-size: 0.88rem;
 }
 
 .bold-org {
-  color: #14110f !important;
+  color: var(--fg) !important;
   margin-top: 0.3rem !important;
 }
 
@@ -216,13 +269,13 @@
 
 .bold-projects span,
 .bold-pubs b {
-  color: #e85c3a;
+  color: var(--accent);
   font-size: 0.86rem;
 }
 
 .bold-projects h3 i {
   font-style: normal;
-  color: #6b625a;
+  color: var(--muted);
   font-weight: 600;
 }
 
@@ -236,7 +289,7 @@
 .bold-pubs small {
   display: block;
   margin-top: 0.45rem;
-  color: #6b625a;
+  color: var(--muted);
 }
 
 .bold-skills {
@@ -246,8 +299,8 @@
 }
 
 .bold-skills span {
-  background: #14110f;
-  color: #f6f1ea;
+  background: var(--skill-bg);
+  color: var(--skill-fg);
   border-radius: 999px;
   padding: 0.45rem 0.85rem;
   font-weight: 700;
@@ -263,7 +316,7 @@
   justify-content: center;
   gap: 1.3rem;
   padding: 1.5rem 5vw 2.4rem;
-  border-top: 2px solid #14110f;
+  border-top: 2px solid var(--border);
   font-weight: 800;
 }
 
@@ -307,9 +360,10 @@
     position: absolute;
     inset: 100% 0 auto;
     flex-direction: column;
+    align-items: flex-start;
     padding: 1rem 5vw 1.3rem;
-    background: #f6f1ea;
-    border-bottom: 2px solid #14110f;
+    background: var(--nav-solid);
+    border-bottom: 2px solid var(--border);
   }
 
   .bold-nav nav.is-open {

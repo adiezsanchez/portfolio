@@ -1,24 +1,14 @@
 # Alberto Díez Sánchez — Portfolio
 
-Static personal site with **two distinct visual designs** and identical CV content.
+Static personal site: a **Bold Modern** layout with a **Dark Mode** toggle that applies the former scientific teal/cyan palette.
 
 Live project site (after GitHub Pages is enabled):
 
 **https://adiezsanchez.github.io/portfolio/**
 
-| Version | Path | Design |
-| --- | --- | --- |
-| Chooser | `/` | Compare both designs |
-| A | `/v1` | Scientific dark — microscopy / data, teal–cyan |
-| C | `/v3` | Bold modern — card grids and snappy reveals |
+The site root (`/`) is the portfolio. There is no design chooser. Older paths `/v1`, `/v2`, and `/v3` redirect to `/`.
 
-Deployed URLs:
-
-- https://adiezsanchez.github.io/portfolio/
-- https://adiezsanchez.github.io/portfolio/v1
-- https://adiezsanchez.github.io/portfolio/v3
-
-`/v2` is removed and redirects to the chooser.
+Dark Mode is available in the top nav (moon icon). The preference is stored in `localStorage` (`portfolio-theme`). Light mode uses orange accents on a cream background; dark mode uses teal/cyan accents on a deep navy background.
 
 Built with Vite + React. No backend, no secrets.
 
@@ -35,7 +25,7 @@ The Vite `base` is `/portfolio/` so the app is served at:
 
 **http://localhost:5173/portfolio/**
 
-Open that URL (not the bare `/`). The root of the app is the design chooser.
+Open that URL (not the bare `/`).
 
 ## Production build
 
@@ -43,7 +33,7 @@ Open that URL (not the bare `/`). The root of the app is the design chooser.
 npm run build
 ```
 
-Output: `dist/` (GitHub Pages ready). The build also writes `dist/404.html` so client-side routes (`/v1`, `/v3`) work on GitHub Pages.
+Output: `dist/` (GitHub Pages ready). The build also writes `dist/404.html` so client-side routes still resolve on GitHub Pages (including the `/v1`–`/v3` redirects).
 
 Preview the production bundle:
 
@@ -69,3 +59,5 @@ If Pages is still pointing at a branch/`/docs` folder, switch it to GitHub Actio
 ## Content
 
 Identity, roles, education, projects, publications, and skills are taken from the provided CV text. Publication titles and DOIs are the official records for those same papers. The CEMIR / St. Olav’s role is dated **Prior to 2024** (no invented months).
+
+Hero and Contact social pills include brand icons for LinkedIn, GitHub, NTNU (official mark from [ntnu.edu](https://www.ntnu.edu/)), and ORCID (green iD icon from [orcid.org](https://orcid.org/)).

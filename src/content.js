@@ -227,22 +227,3 @@ export const skills = [
   '3D microscopy',
   'organoids',
 ]
-
-export const versions = [
-  {
-    id: 'v1',
-    path: '/v1',
-    letter: 'A',
-    name: 'Scientific Dark',
-    blurb:
-      'Dark theme with a microscopy and data aesthetic. Teal and cyan accents on deep navy.',
-  },
-  {
-    id: 'v3',
-    path: '/v3',
-    letter: 'C',
-    name: 'Bold Modern',
-    blurb:
-      'Large hero type, card grids, and snappy section reveals — still professional.',
-  },
-]

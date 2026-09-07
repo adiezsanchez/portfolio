@@ -1,5 +1,35 @@
 :root {
+  color-scheme: light;
+  --bg: #f6f1ea;
+  --fg: #14110f;
+  --muted: #6b625a;
+  --accent: #e85c3a;
+  --accent-strong: #c94a2b;
+  --accent-fg: #fff;
+  --card: #fff;
+  --border: #14110f;
+  --shadow: #14110f;
+  --nav-bg: rgba(246, 241, 234, 0.92);
+  --nav-solid: #f6f1ea;
+  --skill-bg: #14110f;
+  --skill-fg: #f6f1ea;
+}
+
+:root[data-theme='dark'] {
   color-scheme: dark;
+  --bg: #05090e;
+  --fg: #d7ece8;
+  --muted: #8ec9bf;
+  --accent: #3de0d0;
+  --accent-strong: #7ff5ea;
+  --accent-fg: #05090e;
+  --card: #0a161c;
+  --border: #3de0d0;
+  --shadow: #3de0d0;
+  --nav-bg: rgba(5, 9, 14, 0.88);
+  --nav-solid: #071018;
+  --skill-bg: #3de0d0;
+  --skill-fg: #05090e;
 }
 
 *,
@@ -21,11 +51,11 @@ body,
 body {
   margin: 0;
   font-family:
-    'IBM Plex Sans',
+    'Manrope',
     system-ui,
     sans-serif;
-  background: #07090d;
-  color: #e8eef4;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 img {
@@ -43,7 +73,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid #3de0d0;
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 

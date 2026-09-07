@@ -1,5 +1,34 @@
 import { useEffect, useState } from 'react'
 
+const THEME_KEY = 'portfolio-theme'
+
+export function useTheme() {
+  const [dark, setDark] = useState(() => {
+    if (typeof window === 'undefined') return false
+    try {
+      return window.localStorage.getItem(THEME_KEY) === 'dark'
+    } catch {
+      return false
+    }
+  })
+
+  useEffect(() => {
+    const theme = dark ? 'dark' : 'light'
+    document.documentElement.dataset.theme = theme
+    document.documentElement.style.colorScheme = theme
+    try {
+      window.localStorage.setItem(THEME_KEY, theme)
+    } catch {
+      /* ignore quota / private-mode failures */
+    }
+  }, [dark])
+
+  return {
+    dark,
+    toggleTheme: () => setDark((value) => !value),
+  }
+}
+
 export function useRevealOnScroll() {
   useEffect(() => {
     const nodes = Array.from(document.querySelectorAll('[data-reveal]'))
