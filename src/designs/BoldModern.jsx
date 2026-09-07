@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import {
   education,
   experience,
@@ -10,11 +9,36 @@ import {
   sections,
   skills,
 } from '../content.js'
-import { doiHref, scrollToId, useHashScroll, useMobileNav, useRevealOnScroll } from '../lib/hooks.js'
+import { doiHref, scrollToId, useHashScroll, useMobileNav, useRevealOnScroll, useTheme } from '../lib/hooks.js'
+import { GitHubIcon, LinkedInIcon, MoonIcon, NtnuIcon, OrcidIcon, SunIcon } from '../lib/icons.jsx'
 import './BoldModern.css'
+
+function SocialLinks({ className }) {
+  return (
+    <div className={className}>
+      <a href={links.linkedin} target="_blank" rel="noreferrer">
+        <LinkedInIcon />
+        LinkedIn
+      </a>
+      <a href={links.github} target="_blank" rel="noreferrer">
+        <GitHubIcon />
+        GitHub
+      </a>
+      <a href={links.ntnu} target="_blank" rel="noreferrer">
+        <NtnuIcon />
+        NTNU
+      </a>
+      <a href={links.orcid} target="_blank" rel="noreferrer">
+        <OrcidIcon />
+        ORCID
+      </a>
+    </div>
+  )
+}
 
 export default function BoldModern() {
   const { open, setOpen } = useMobileNav()
+  const { dark, toggleTheme } = useTheme()
   useRevealOnScroll()
   useHashScroll()
 
@@ -26,9 +50,9 @@ export default function BoldModern() {
   return (
     <div className="bold">
       <header className="bold-nav">
-        <Link className="bold-logo" to="/">
+        <a className="bold-logo" href="#about" onClick={(event) => { event.preventDefault(); go('about') }}>
           ADS
-        </Link>
+        </a>
         <button
           className="bold-burger"
           type="button"
@@ -46,7 +70,16 @@ export default function BoldModern() {
               {section.label}
             </button>
           ))}
-          <Link to="/">Both designs</Link>
+          <button
+            type="button"
+            className="bold-theme"
+            aria-pressed={dark}
+            aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={toggleTheme}
+          >
+            {dark ? <SunIcon /> : <MoonIcon />}
+            {dark ? 'Light Mode' : 'Dark Mode'}
+          </button>
         </nav>
       </header>
 
@@ -71,19 +104,8 @@ export default function BoldModern() {
               <a href={person.phoneHref}>{person.phone}</a>
               <span>{person.location}</span>
             </div>
-            <div className="bold-chips" data-reveal>
-              <a href={links.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a href={links.github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href={links.ntnu} target="_blank" rel="noreferrer">
-                NTNU
-              </a>
-              <a href={links.orcid} target="_blank" rel="noreferrer">
-                ORCID
-              </a>
+            <div data-reveal>
+              <SocialLinks className="bold-chips bold-social" />
             </div>
           </div>
         </div>
@@ -180,11 +202,15 @@ export default function BoldModern() {
           <a href={person.phoneHref}>{person.phone}</a>
           <span>{person.location}</span>
         </div>
+        <div data-reveal>
+          <SocialLinks className="bold-chips bold-social" />
+        </div>
       </section>
 
       <footer className="bold-foot">
-        <Link to="/">Compare</Link>
-        <Link to="/v1">A Scientific</Link>
+        <span>
+          {person.name}, {person.degree}
+        </span>
       </footer>
     </div>
   )
