@@ -1,6 +1,6 @@
 # Alberto Díez Sánchez — Portfolio
 
-Static personal site with **three distinct visual designs** and identical CV content.
+Static personal site with **two distinct visual designs** and identical CV content.
 
 Live project site (after GitHub Pages is enabled):
 
@@ -8,17 +8,17 @@ Live project site (after GitHub Pages is enabled):
 
 | Version | Path | Design |
 | --- | --- | --- |
-| Chooser | `/` | Compare all three |
+| Chooser | `/` | Compare both designs |
 | A | `/v1` | Scientific dark — microscopy / data, teal–cyan |
-| B | `/v2` | Clean academic — light, typographic, publication-forward |
-| C | `/v3` | Bold modern — large type, card grids, snappy reveals |
+| C | `/v3` | Bold modern — card grids and snappy reveals |
 
 Deployed URLs:
 
 - https://adiezsanchez.github.io/portfolio/
 - https://adiezsanchez.github.io/portfolio/v1
-- https://adiezsanchez.github.io/portfolio/v2
 - https://adiezsanchez.github.io/portfolio/v3
+
+`/v2` is removed and redirects to the chooser.
 
 Built with Vite + React. No backend, no secrets.
 
@@ -43,7 +43,7 @@ Open that URL (not the bare `/`). The root of the app is the design chooser.
 npm run build
 ```
 
-Output: `dist/` (GitHub Pages ready). The build also writes `dist/404.html` so client-side routes (`/v1`, `/v2`, `/v3`) work on GitHub Pages.
+Output: `dist/` (GitHub Pages ready). The build also writes `dist/404.html` so client-side routes (`/v1`, `/v3`) work on GitHub Pages.
 
 Preview the production bundle:
 

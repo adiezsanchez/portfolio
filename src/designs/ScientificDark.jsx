@@ -10,8 +10,33 @@ import {
   sections,
   skills,
 } from '../content.js'
+import Carousel from '../lib/Carousel.jsx'
 import { doiHref, scrollToId, useHashScroll, useMobileNav, useRevealOnScroll } from '../lib/hooks.js'
+import { GitHubIcon, LinkedInIcon, NtnuIcon, OrcidIcon } from '../lib/icons.jsx'
 import './ScientificDark.css'
+
+function SocialLinks({ className }) {
+  return (
+    <div className={className}>
+      <a href={links.linkedin} target="_blank" rel="noreferrer">
+        <LinkedInIcon />
+        <span>LinkedIn</span>
+      </a>
+      <a href={links.github} target="_blank" rel="noreferrer">
+        <GitHubIcon />
+        <span>GitHub</span>
+      </a>
+      <a href={links.ntnu} target="_blank" rel="noreferrer">
+        <NtnuIcon />
+        <span>NTNU</span>
+      </a>
+      <a href={links.orcid} target="_blank" rel="noreferrer">
+        <OrcidIcon />
+        <span>ORCID</span>
+      </a>
+    </div>
+  )
+}
 
 export default function ScientificDark() {
   const { open, setOpen } = useMobileNav()
@@ -59,7 +84,7 @@ export default function ScientificDark() {
             <div>
               <h1 data-reveal>
                 {person.name}
-                <em> {person.degree}</em>
+                <em>, {person.degree}</em>
               </h1>
               <p className="sci-title" data-reveal>
                 {person.title}
@@ -75,19 +100,8 @@ export default function ScientificDark() {
                 <a href={person.phoneHref}>{person.phone}</a>
                 <span>{person.location}</span>
               </div>
-              <div className="sci-links" data-reveal>
-                <a href={links.linkedin} target="_blank" rel="noreferrer">
-                  LinkedIn
-                </a>
-                <a href={links.github} target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
-                <a href={links.ntnu} target="_blank" rel="noreferrer">
-                  NTNU
-                </a>
-                <a href={links.orcid} target="_blank" rel="noreferrer">
-                  ORCID
-                </a>
+              <div data-reveal>
+                <SocialLinks className="sci-links" />
               </div>
             </div>
             <figure className="sci-portrait" data-reveal>
@@ -102,73 +116,75 @@ export default function ScientificDark() {
             <span>01</span>
             <h2>Experience</h2>
           </header>
-          <ol className="sci-timeline">
-            {experience.map((job) => (
-              <li key={job.role} data-reveal>
-                <p className="sci-when">
-                  {job.dates} · {job.place}
-                </p>
-                <h3>{job.role}</h3>
-                <p className="sci-org">{job.org}</p>
-                <ul>
-                  {job.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className="sci-section" id="education">
-          <header data-reveal>
-            <span>02</span>
-            <h2>Education</h2>
-          </header>
-          <div className="sci-edu">
-            {education.map((item) => (
-              <article key={item.degree} data-reveal>
-                <p className="sci-when">{item.dates}</p>
-                <h3>{item.degree}</h3>
-                <p className="sci-org">{item.school}</p>
-                <ul>
-                  {item.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+          <div data-reveal>
+            <Carousel
+              items={experience}
+              ariaLabel="Experience"
+              renderItem={(job) => (
+                <article className="sci-card">
+                  <p className="sci-when">
+                    {job.dates} · {job.place}
+                  </p>
+                  <h3>{job.role}</h3>
+                  <p className="sci-org">{job.org}</p>
+                  <ul>
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+            />
           </div>
         </section>
 
         <section className="sci-section" id="projects">
           <header data-reveal>
-            <span>03</span>
+            <span>02</span>
             <h2>Selected Projects</h2>
           </header>
-          <div className="sci-projects">
-            {projects.map((project) => (
-              <a
-                key={project.name}
-                className="sci-project"
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                data-reveal
-              >
-                <div>
+          <div data-reveal>
+            <Carousel
+              items={projects}
+              ariaLabel="Selected projects"
+              renderItem={(project) => (
+                <a className="sci-card sci-project" href={project.url} target="_blank" rel="noreferrer">
+                  <span className="sci-when">
+                    {project.featured ? 'Featured' : project.stars != null ? `${project.stars}★` : ''}
+                  </span>
                   <h3>
                     {project.name}
                     {project.aka ? <small> / {project.aka}</small> : null}
                   </h3>
                   <p>{project.blurb}</p>
-                </div>
-                <span>
-                  {project.featured ? 'Featured' : null}
-                  {project.stars != null ? `${project.stars}★` : ''}
-                </span>
-              </a>
-            ))}
+                </a>
+              )}
+            />
+          </div>
+        </section>
+
+        <section className="sci-section" id="education">
+          <header data-reveal>
+            <span>03</span>
+            <h2>Education</h2>
+          </header>
+          <div data-reveal>
+            <Carousel
+              items={education}
+              ariaLabel="Education"
+              renderItem={(item) => (
+                <article className="sci-card">
+                  <p className="sci-when">{item.dates}</p>
+                  <h3>{item.degree}</h3>
+                  <p className="sci-org">{item.school}</p>
+                  <ul>
+                    {item.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+            />
           </div>
         </section>
 
@@ -177,46 +193,62 @@ export default function ScientificDark() {
             <span>04</span>
             <h2>Publications</h2>
           </header>
-          <ul className="sci-pubs">
-            {publications.map((pub) => (
-              <li key={pub.doi} data-reveal>
-                <span>{pub.year}</span>
-                <div>
-                  <a href={doiHref(pub.doi)} target="_blank" rel="noreferrer">
-                    {pub.title}
-                  </a>
+          <div data-reveal>
+            <Carousel
+              items={publications}
+              ariaLabel="Publications"
+              renderItem={(pub) => (
+                <a className="sci-card sci-pub" href={doiHref(pub.doi)} target="_blank" rel="noreferrer">
+                  <span className="sci-when">{pub.year}</span>
+                  <h3>{pub.title}</h3>
                   <p>
                     {pub.journal}
                     {pub.firstAuthor ? ' · first author' : ''}
                     {pub.cites ? ` · ${pub.cites}` : ''}
                   </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </a>
+              )}
+            />
+          </div>
         </section>
 
-        <section className="sci-section sci-last" id="skills">
+        <section className="sci-section" id="skills">
           <header data-reveal>
             <span>05</span>
-            <h2>Skills & contact</h2>
+            <h2>Skills</h2>
           </header>
           <ul className="sci-skills" data-reveal>
             {skills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>
-          <div className="sci-contact-row" data-reveal>
-            <a href={`mailto:${person.email}`}>{person.email}</a>
-            <a href={person.phoneHref}>{person.phone}</a>
-            <span>{person.location}</span>
+        </section>
+
+        <section className="sci-section sci-last" id="contact">
+          <header data-reveal>
+            <span>06</span>
+            <h2>Contact</h2>
+          </header>
+          <div className="sci-contact-grid" data-reveal>
+            <a className="sci-card" href={`mailto:${person.email}`}>
+              <p className="sci-when">Email</p>
+              <h3>{person.email}</h3>
+            </a>
+            <a className="sci-card" href={person.phoneHref}>
+              <p className="sci-when">Phone</p>
+              <h3>{person.phone}</h3>
+            </a>
+            <article className="sci-card">
+              <p className="sci-when">Location</p>
+              <h3>{person.location}</h3>
+            </article>
           </div>
+          <SocialLinks className="sci-links sci-links-lg" />
         </section>
       </main>
 
       <footer className="sci-foot">
         <Link to="/">Compare designs</Link>
-        <Link to="/v2">B · Academic</Link>
         <Link to="/v3">C · Bold</Link>
       </footer>
     </div>

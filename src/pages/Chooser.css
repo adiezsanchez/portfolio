@@ -115,8 +115,9 @@
 
 .chooser-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.15rem;
+  max-width: 860px;
 }
 
 .chooser-card {
@@ -199,20 +200,6 @@
   border-color: rgba(61, 224, 208, 0.45);
 }
 
-.chooser-card-v2 .chooser-preview {
-  background: #f4efe4;
-}
-
-.chooser-card-v2 .chooser-preview-bar,
-.chooser-card-v2 .chooser-preview-hero,
-.chooser-card-v2 .chooser-preview-lines i {
-  background: #2a241c;
-}
-
-.chooser-card-v2:hover {
-  border-color: rgba(244, 239, 228, 0.45);
-}
-
 .chooser-card-v3 .chooser-preview {
   background:
     linear-gradient(135deg, #111 40%, #e85c3a 140%),
@@ -238,10 +225,6 @@
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   color: #3de0d0;
-}
-
-.chooser-card-v2 .chooser-letter {
-  color: #e8c27a;
 }
 
 .chooser-card-v3 .chooser-letter {

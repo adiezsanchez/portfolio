@@ -28,7 +28,7 @@ export default function Chooser() {
             height="160"
           />
           <div>
-            <p className="chooser-kicker">Three visual versions · one CV</p>
+            <p className="chooser-kicker">Two visual versions · one CV</p>
             <h1>
               {person.name}
               <span>, {person.degree}</span>

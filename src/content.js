@@ -24,10 +24,11 @@ export const links = {
 export const sections = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
   { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
   { id: 'publications', label: 'Publications' },
   { id: 'skills', label: 'Skills' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 export const experience = [
@@ -235,14 +236,6 @@ export const versions = [
     name: 'Scientific Dark',
     blurb:
       'Dark theme with a microscopy and data aesthetic. Teal and cyan accents on deep navy.',
-  },
-  {
-    id: 'v2',
-    path: '/v2',
-    letter: 'B',
-    name: 'Clean Academic',
-    blurb:
-      'Light, typographic, and journal-inspired. Publications sit forward in a paper-like layout.',
   },
   {
     id: 'v3',

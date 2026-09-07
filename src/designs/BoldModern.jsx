@@ -46,7 +46,7 @@ export default function BoldModern() {
               {section.label}
             </button>
           ))}
-          <Link to="/">All three</Link>
+          <Link to="/">Both designs</Link>
         </nav>
       </header>
 
@@ -55,11 +55,7 @@ export default function BoldModern() {
           {person.title}
         </p>
         <h1 data-reveal>
-          Alberto
-          <br />
-          Díez
-          <br />
-          Sánchez<span>.</span>
+          {person.name}, {person.degree}
         </h1>
         <div className="bold-hero-row">
           <img src={profileSrc} alt={`Portrait of ${person.name}`} width="280" height="280" data-reveal />
@@ -113,24 +109,6 @@ export default function BoldModern() {
         </div>
       </section>
 
-      <section className="bold-block" id="education">
-        <h2 data-reveal>Education</h2>
-        <div className="bold-edu">
-          {education.map((item) => (
-            <article key={item.degree} data-reveal>
-              <p>{item.dates}</p>
-              <h3>{item.degree}</h3>
-              <p className="bold-org">{item.school}</p>
-              <ul>
-                {item.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="bold-block" id="projects">
         <h2 data-reveal>Selected projects</h2>
         <div className="bold-projects">
@@ -145,6 +123,24 @@ export default function BoldModern() {
               </h3>
               <p>{project.blurb}</p>
             </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="bold-block" id="education">
+        <h2 data-reveal>Education</h2>
+        <div className="bold-edu">
+          {education.map((item) => (
+            <article key={item.degree} data-reveal>
+              <p>{item.dates}</p>
+              <h3>{item.degree}</h3>
+              <p className="bold-org">{item.school}</p>
+              <ul>
+                {item.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </section>
@@ -168,13 +164,17 @@ export default function BoldModern() {
         </div>
       </section>
 
-      <section className="bold-block bold-last" id="skills">
-        <h2 data-reveal>Skills & contact</h2>
+      <section className="bold-block" id="skills">
+        <h2 data-reveal>Skills</h2>
         <div className="bold-skills" data-reveal>
           {skills.map((skill) => (
             <span key={skill}>{skill}</span>
           ))}
         </div>
+      </section>
+
+      <section className="bold-block bold-last" id="contact">
+        <h2 data-reveal>Contact</h2>
         <div className="bold-chips" data-reveal>
           <a href={`mailto:${person.email}`}>{person.email}</a>
           <a href={person.phoneHref}>{person.phone}</a>
@@ -185,7 +185,6 @@ export default function BoldModern() {
       <footer className="bold-foot">
         <Link to="/">Compare</Link>
         <Link to="/v1">A Scientific</Link>
-        <Link to="/v2">B Academic</Link>
       </footer>
     </div>
   )
