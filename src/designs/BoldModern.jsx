@@ -1,9 +1,10 @@
 import {
+  conferences,
   education,
   experience,
   links,
   person,
-  profileSrc,
+  profiles,
   projects,
   publications,
   sections,
@@ -12,6 +13,23 @@ import {
 import { doiHref, scrollToId, useHashScroll, useMobileNav, useRevealOnScroll, useTheme } from '../lib/hooks.js'
 import { GitHubIcon, LinkedInIcon, MoonIcon, NtnuIcon, OrcidIcon, SunIcon } from '../lib/icons.jsx'
 import './BoldModern.css'
+
+function pillThumbStyle(src) {
+  return src ? { '--pill-thumb': `url("${src}")` } : undefined
+}
+
+function KeywordLine({ keywords }) {
+  return (
+    <span className="bold-keywords">
+      {keywords.map((keyword, index) => (
+        <span key={keyword}>
+          {index > 0 ? <i aria-hidden="true">·</i> : null}
+          {keyword}
+        </span>
+      ))}
+    </span>
+  )
+}
 
 function SocialLinks({ className }) {
   return (
@@ -91,7 +109,13 @@ export default function BoldModern() {
           {person.name}, {person.degree}
         </h1>
         <div className="bold-hero-row">
-          <img src={profileSrc} alt={`Portrait of ${person.name}`} width="280" height="280" data-reveal />
+          <img
+            src={dark ? profiles.dark : profiles.light}
+            alt={`Portrait of ${person.name}`}
+            width="280"
+            height="280"
+            data-reveal
+          />
           <div>
             <p className="bold-tag" data-reveal>
               {person.tagline}
@@ -135,15 +159,41 @@ export default function BoldModern() {
         <h2 data-reveal>Selected projects</h2>
         <div className="bold-projects">
           {projects.map((project) => (
-            <a key={project.name} href={project.url} target="_blank" rel="noreferrer" data-reveal>
-              <span>
-                {project.featured ? 'Featured' : project.stars != null ? `${project.stars}★` : ''}
-              </span>
+            <a
+              key={project.name}
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              data-reveal
+              className="bold-media-pill"
+              style={pillThumbStyle(project.image)}
+            >
+              <KeywordLine keywords={project.keywords} />
               <h3>
                 {project.name}
                 {project.aka ? <i> / {project.aka}</i> : null}
               </h3>
               <p>{project.blurb}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="bold-block" id="conferences">
+        <h2 data-reveal>Conferences and Workshops</h2>
+        <div className="bold-conferences">
+          {conferences.map((talk) => (
+            <a
+              key={talk.url}
+              href={talk.url}
+              target="_blank"
+              rel="noreferrer"
+              data-reveal
+              className="bold-media-pill"
+              style={pillThumbStyle(talk.image)}
+            >
+              <span>{talk.venue}</span>
+              <h3>{talk.title}</h3>
             </a>
           ))}
         </div>

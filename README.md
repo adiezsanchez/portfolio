@@ -8,7 +8,7 @@ Live project site (after GitHub Pages is enabled):
 
 The site root (`/`) is the portfolio. There is no design chooser. Older paths `/v1`, `/v2`, and `/v3` redirect to `/`.
 
-Dark Mode is available in the top nav (moon icon). The preference is stored in `localStorage` (`portfolio-theme`). Light mode uses orange accents on a cream background; dark mode uses teal/cyan accents on a deep navy background.
+Dark Mode is available in the top nav (moon icon). The preference is stored in `localStorage` (`portfolio-theme`). Light mode uses orange accents on a cream background and `public/profile-light.png`; dark mode uses teal/cyan accents on a deep navy background and `public/profile-dark.png`.
 
 Built with Vite + React. No backend, no secrets.
 
@@ -58,6 +58,8 @@ If Pages is still pointing at a branch/`/docs` folder, switch it to GitHub Actio
 
 ## Content
 
-Identity, roles, education, projects, publications, and skills are taken from the provided CV text. Publication titles and DOIs are the official records for those same papers. The CEMIR / St. Olav’s role is dated **Prior to 2024** (no invented months).
+Identity, roles, education, projects, conferences, publications, and skills are taken from the provided CV text. Publication titles and DOIs are the official records for those same papers. The CEMIR / St. Olav’s role is dated **Prior to 2024** (no invented months).
+
+Selected Projects show keywords (not star counts) from `src/content.js`. Conferences and Workshops sit between Projects and Education and link to the three YouTube talks. Project and conference pills use faded, desaturated README / thumbnail backgrounds; tweak `--pill-thumb-fade-end`, `--pill-thumb-opacity`, and `--pill-thumb-grayscale` in `src/designs/BoldModern.css`.
 
 Hero and Contact social pills include monochrome LinkedIn, GitHub, NTNU, and ORCID marks (icon + label in a single chip). Icons inherit the pill text color in light and dark mode.
