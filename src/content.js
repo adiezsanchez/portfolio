@@ -227,7 +227,7 @@ export const publications = [
     title:
       'LSD1 drives intestinal epithelial maturation and controls small intestinal immune cell composition independent of microbiota in a murine model',
     doi: '10.1038/s41467-024-47815-2',
-    firstAuthor: true,
+    cites: '~9 cites',
   },
   {
     year: 2024,
@@ -235,6 +235,7 @@ export const publications = [
     title:
       'Biofilm and the effect of sonication in a chronic Staphylococcus epidermidis orthopedic in vivo implant infection model',
     doi: '10.1186/s13018-024-05309-3',
+    cites: '~5 cites',
   },
   {
     year: 2022,
@@ -242,6 +243,7 @@ export const publications = [
     title:
       'BMP signaling in the intestinal epithelium drives a critical feedback loop to restrain IL-13-driven tuft cell hyperplasia',
     doi: '10.1126/sciimmunol.abl6543',
+    cites: '~73 cites',
   },
   {
     year: 2021,
@@ -249,6 +251,7 @@ export const publications = [
     title:
       'Smooth muscle-specific MMP17 (MT4-MMP) regulates the intestinal stem cell niche and regeneration after damage',
     doi: '10.1038/s41467-021-26904-6',
+    cites: '~43 cites',
   },
   {
     year: 2021,
@@ -256,6 +259,7 @@ export const publications = [
     title:
       'A semi-automated organoid screening method demonstrates epigenetic control of intestinal epithelial differentiation',
     doi: '10.3389/fcell.2020.618552',
+    cites: '~22 cites',
   },
   {
     year: 2021,
@@ -263,6 +267,7 @@ export const publications = [
     title:
       'Intestinal-epithelial LSD1 controls goblet cell maturation and effector responses required for gut immunity to bacterial and helminth infection',
     doi: '10.1371/journal.ppat.1009476',
+    cites: '~18 cites',
   },
   {
     year: 2020,
@@ -270,6 +275,7 @@ export const publications = [
     title:
       'LSD1 represses a neonatal/reparative gene program in adult intestinal epithelium',
     doi: '10.1126/sciadv.abc0367',
+    cites: '~27 cites',
   },
   {
     year: 2018,
@@ -277,7 +283,7 @@ export const publications = [
     title:
       'Caveolin-1 modulates mechanotransduction responses to substrate stiffness through actin-dependent control of YAP',
     doi: '10.1016/j.celrep.2018.10.024',
-    cites: '~147 cites',
+    cites: '~125 cites',
   },
   {
     year: 2018,
@@ -285,7 +291,7 @@ export const publications = [
     title:
       'Tox_(R)CNN: Deep learning-based nuclei profiling tool for drug toxicity screening',
     doi: '10.1371/journal.pcbi.1006238',
-    cites: '~79 cites',
+    cites: '~75 cites',
   },
 ]
 
@@ -296,7 +302,7 @@ export const skills = [
   'CUDA',
   'Cellpose',
   'StarDist',
-  'YOLOv8',
+  'YOLO',
   'napari',
   'Nextflow',
   'Slurm',
@@ -306,5 +312,5 @@ export const skills = [
   'BioImage Archive',
   'HCS',
   '3D microscopy',
-  'organoids',
+  'Biotechnology',
 ]
