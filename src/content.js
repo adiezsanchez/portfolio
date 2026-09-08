@@ -44,7 +44,7 @@ export const experience = [
     place: 'Trondheim',
     dates: 'Jan 2024 – Present',
     bullets: [
-      'Led CMIC Bioimage Analysis platform serving 15+ research groups',
+      'Led CMIC Bioimage Analysis platform supporting +200 researchers',
       'Scaled HCS pipelines to HPC using Slurm/Nextflow (5–10× on multi-TB data)',
       'DL pipelines: segmentation, object detection, representation learning (PyTorch, TensorFlow, CUDA)',
       'FAIR data management: GitHub–Zenodo DOIs, BioImage Archive',
@@ -141,53 +141,55 @@ export const education = [
 
 export const projects = [
   {
-    name: 'brain_tissue_nuc_segm',
+    name: 'Self-analytics tool for 3D segmentation of brain tissue',
     url: 'https://github.com/adiezsanchez/brain_tissue_nuc_segm',
-    keywords: ['StarDist 3D', 'Cellpose', 'Nuclear segmentation'],
+    keywords: ['3D', 'Random Forest', 'Instance segmentation'],
     image: asset('projects/brain_tissue_nuc_segm.png'),
     blurb:
-      'Segmentation of nuclear signals in fluorescently stained mouse brain tissue sections with a fine-tuned StarDist 3D model and/or Cellpose.',
+      'Cell population identification in stained mouse brain tissue sections and organoids using a fine-tuned StarDist 3D models. Simulation of cell compartments via GPU-accelerated morphological operations.',
   },
   {
-    name: 'intestinal_organoid_brightfield_analysis',
-    url: 'https://github.com/adiezsanchez/intestinal_organoid_brightfield_analysis',
-    keywords: ['Brightfield', 'Organoids', 'Quantification'],
-    image: asset('projects/intestinal_organoid_brightfield_analysis.png'),
-    blurb:
-      'Tools to analyze intestinal organoid imaging at the Martín-Alonso / Oudhoff lab.',
+    name: 'Representation Learning for image-based phenotypic profiling',
+    aka: 'EMBED-HCS',
+    url: 'https://github.com/adiezsanchez/lisaoya_hcs_embed',
+    keywords: ['Representation Learning', 'Embeddings', 'Autoencoders'],
+    image: asset('projects/lisaoya_hcs_embed.png'),
+    blurb: 'Generation of biologically meaningful embeddings from High Content Imaging using DinoV3, autoencoders and a classification head',
   },
   {
-    name: 'saramorg_fret_nroot',
+    name: 'Automated tissue-layer assignment and 3D root reconstruction',
+    aka: 'FRET-NroOT',
     url: 'https://github.com/adiezsanchez/saramorg_fret_nroot',
     keywords: ['UNet3D', 'k-means clustering', 'Classification'],
     image: asset('projects/saramorg_fret_nroot.png'),
     blurb:
-      'Arabidopsis thaliana root FRET-ratio analysis in nuclei, 3D root reconstruction, and automatic tissue-layer assignment. Developed for the Functional Plant Biology group at NTNU.',
+      'Automated tissue-layer assignment + 3D root reconstruction of Arabidopsis roots. Developed for the Functional Plant Biology group at NTNU.',
   },
   {
-    name: 'intestinal_organoid_yolov8',
+    name: 'YOLOv8-based organoid detection and characterization',
     aka: 'ISIS-BF-YOLO',
     url: 'https://github.com/adiezsanchez/intestinal_organoid_yolov8',
-    keywords: ['YOLOv8', 'Instance segmentation', 'Organoids'],
+    keywords: ['Instance segmentation', 'Object detection', 'YOLO'],
     image: asset('projects/intestinal_organoid_yolov8.png'),
     blurb:
-      'AI tools (YOLOv8) to analyze intestinal organoid imaging at the Martín-Alonso / Oudhoff lab.',
+      'AI tools (YOLOv8) to analyze intestinal organoid imaging at the Martín-Alonso and Oudhoff labs.',
   },
   {
-    name: 'YAP_nuclear_3D_orgs',
+    name: 'Organoid detection and characterization from brightfield images',
+    url: 'https://github.com/adiezsanchez/intestinal_organoid_brightfield_analysis',
+    keywords: ['Object detection', 'Feature extraction', 'Classifiers'],
+    image: asset('projects/intestinal_organoid_brightfield_analysis.png'),
+    blurb:
+      'Tools to analyze intestinal organoid imaging at the Martín-Alonso and Oudhoff labs.',
+  },
+  {
+    name: '3D nuclear translocation study of YAP in intestinal organoids',
     aka: 'YAP-LOC3D',
     url: 'https://github.com/adiezsanchez/YAP_nuclear_3D_orgs',
-    keywords: ['CellposeSAM', 'Nuclear translocation', '3D organoids'],
+    keywords: ['Data Visualization', 'Instance segmentation', 'CellposeSAM'],
     image: asset('projects/YAP_nuclear_3D_orgs.png'),
     blurb:
       '3D nuclear translocation study of YAP in intestinal organoids. Developed for the Martín-Alonso Regeneration lab.',
-  },
-  {
-    name: 'microglia_dna_damage',
-    url: 'https://github.com/adiezsanchez/microglia_dna_damage',
-    keywords: ['DNA damage', 'Microglia', 'Nuclei'],
-    image: asset('projects/microglia_dna_damage.png'),
-    blurb: 'Python script to analyze DNA damage in microglial cells.',
   },
   {
     name: 'ClawBio',
