@@ -10,7 +10,8 @@
 
     --pill-thumb-fade-end   Where the left→right fade becomes fully transparent
                             (66% ≈ 2/3 of the pill width).
-    --pill-thumb-opacity    Overlay opacity after desaturation.
+    --pill-thumb-opacity    Overlay opacity when the thumbnail is visible
+                            (hover / keyboard focus). Hidden at rest (opacity 0).
     --pill-thumb-grayscale  0 = full color, 1 = fully desaturated.
     --pill-thumb            Image URL; set per pill (inline) as url("…").
   */
@@ -261,13 +262,20 @@
   background-position: center left;
   background-repeat: no-repeat;
   filter: grayscale(var(--pill-thumb-grayscale));
-  opacity: var(--pill-thumb-opacity);
+  opacity: 0;
+  transition: opacity 0.3s ease;
   -webkit-mask-image: linear-gradient(
     to right,
     #000 0%,
     transparent var(--pill-thumb-fade-end)
   );
   mask-image: linear-gradient(to right, #000 0%, transparent var(--pill-thumb-fade-end));
+}
+
+.bold-media-pill:hover::before,
+.bold-media-pill:focus-visible::before,
+.bold-media-pill:focus-within::before {
+  opacity: var(--pill-thumb-opacity);
 }
 
 .bold-media-pill > * {
