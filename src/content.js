@@ -16,7 +16,7 @@ export const person = {
   phone: '+47 413 74 790',
   phoneHref: 'tel:+4741374790',
   summary:
-    "Senior bioimage analyst and biotech computational scientist specializing in deep learning for microscopy and biomedical image analysis. Builds reproducible, HPC-ready end-to-end pipelines for 2D/3D segmentation, object detection, and phenotypic profiling across tissues, organoids, and cell cultures. Leads CMIC's Bioimage Analysis Service at NTNU, supporting 15+ research groups.",
+    "Senior bioimage analyst and biotech computational scientist specializing in deep learning for microscopy and biomedical image analysis. Builds reproducible, HPC-ready end-to-end pipelines for 2D/3D segmentation, object detection, and phenotypic profiling across scales: organs, tissues, organoids, and cells. Leads CMIC's Bioimage Analysis Service at NTNU, supporting 15+ research groups.",
 }
 
 export const links = {
@@ -62,12 +62,12 @@ export const experience = [
     ],
   },
   {
-    role: 'Research Scientist — HCS, Drug Discovery, Biotech',
+    role: 'Research Scientist - HCS, Drug Discovery, Biotech',
     org: 'CNIC, Spain',
     place: 'Madrid',
     dates: 'May 2014 – Oct 2018',
     bullets: [
-      'Designed and executed high-content perturbation screening assays, integrating genetic (siRNA) and chemical perturbations to investigate cancer biology',
+      'Designed and executed high-content perturbation screening assays (HCS), integrating genetic (siRNA) and chemical perturbations to investigate cancer biology',
       'Developed and optimized automated phenotypic screening workflows spanning assay design, multiplexed staining (Cell Painting), liquid handling, robotic plate processing, and high-content imaging',
       'Led preclinical studies evaluating proprietary therapeutic compounds in triple-negative breast cancer through a collaboration with pharma',
     ],
@@ -296,21 +296,21 @@ export const publications = [
 ]
 
 export const skills = [
+  'Bioimage Analysis',
+  'Data Science',
+  'Computer Vision',
+  'Machine Learning',
+  'Deep Learning',
   'Python',
   'PyTorch',
   'TensorFlow',
   'CUDA',
-  'Cellpose',
-  'StarDist',
-  'YOLO',
-  'napari',
   'Nextflow',
   'Slurm',
   'HPC',
   'FAIR',
-  'Zenodo',
-  'BioImage Archive',
+  'Data Management',
+  'Microscopy',
   'HCS',
-  '3D microscopy',
   'Biotechnology',
 ]
