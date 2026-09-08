@@ -8,15 +8,15 @@ export const profiles = {
 export const person = {
   name: 'Alberto Díez Sánchez',
   degree: 'PhD',
-  title: 'Data Scientist · Biomedical Image Analysis',
+  title: 'Data Scientist · Biomedical Image Analysis · Computer Vision · ML/AI x Bio',
   tagline:
     'AI-driven bioimage analysis pipelines for high-content microscopy',
   location: 'Trondheim, Norway',
-  email: 'alberto.d.sanchez@ntnu.no',
-  phone: '+47 735 98 595',
-  phoneHref: 'tel:+4773598595',
+  email: 'adiezsanchez@pm.me',
+  phone: '+47 413 74 790',
+  phoneHref: 'tel:+4741374790',
   summary:
-    "Senior bioimage analyst and computational scientist specializing in deep learning for microscopy. Builds reproducible, HPC-ready end-to-end pipelines for 2D/3D segmentation, object detection, and phenotypic profiling across tissues, organoids, and cell cultures. Leads CMIC's Bioimage Analysis Service at NTNU, supporting 15+ research groups.",
+    "Senior bioimage analyst and biotech computational scientist specializing in deep learning for microscopy and biomedical image analysis. Builds reproducible, HPC-ready end-to-end pipelines for 2D/3D segmentation, object detection, and phenotypic profiling across tissues, organoids, and cell cultures. Leads CMIC's Bioimage Analysis Service at NTNU, supporting 15+ research groups.",
 }
 
 export const links = {
@@ -39,55 +39,64 @@ export const sections = [
 
 export const experience = [
   {
-    role: 'Computational Scientist — Bioimage Analysis, AI/ML, Single-Cell & HCS',
-    org: 'NTNU / CMIC',
+    role: 'Computational Scientist - Bioimage Analysis, AI/ML, Single-Cell & HCS',
+    org: 'Cellular and Molecular Imaging Core (CMIC) / NTNU, Norway',
     place: 'Trondheim',
     dates: 'Jan 2024 – Present',
     bullets: [
-      "Led CMIC Bioimage Analysis Service for 15+ groups",
-      'Scaled HCS pipelines to Slurm/Nextflow (5–10× on multi-TB data)',
-      'DL pipelines: segmentation, detection, phenotypic profiling (PyTorch, TensorFlow, CUDA)',
-      'FAIR data: GitHub–Zenodo DOIs, BioImage Archive',
+      'Led CMIC Bioimage Analysis platform serving 15+ research groups',
+      'Scaled HCS pipelines to HPC using Slurm/Nextflow (5–10× on multi-TB data)',
+      'DL pipelines: segmentation, object detection, representation learning (PyTorch, TensorFlow, CUDA)',
+      'FAIR data management: GitHub–Zenodo DOIs, BioImage Archive',
     ],
   },
   {
-    role: 'Senior Scientist — Organoid & Stem Cell Biology / Immunology',
-    org: "CEMIR, St. Olav's / NTNU",
+    role: 'Senior Scientist - Organoid & Stem Cell Biology / Immunology',
+    org: "CEMIR, St. Olav's Hospital / NTNU, Norway",
     place: 'Trondheim',
     dates: 'Prior to 2024',
     bullets: [
-      'Organoid screening; epigenetic control of epithelial differentiation',
-      'First-author Nature Communications on LSD1 (2024)',
+      'Led and contributed to studies integrating imaging, microbiome profiling, bulk RNA-seq, and single-cell transcriptomics data',
+      'Developed and optimized advanced confocal microscopy workflows for organoids, tissues, and animal models',
+      'Drove experimental research programs in stem cell regulation, tissue regeneration, and host–immune interactions',
     ],
   },
   {
-    role: 'Research / Junior Research Scientist — HCS, Bioimage Analysis',
-    org: 'CNIC',
+    role: 'Research Scientist — HCS, Drug Discovery, Biotech',
+    org: 'CNIC, Spain',
     place: 'Madrid',
     dates: 'May 2014 – Oct 2018',
     bullets: [
-      'HCS / 3D culture analysis; Tox_(R)Tool (PLoS Comput Biol); PhD on stromal CAV1 in breast cancer angiogenesis',
+      'Designed and executed high-content perturbation screening assays, integrating genetic (siRNA) and chemical perturbations to investigate cancer biology',
+      'Developed and optimized automated phenotypic screening workflows spanning assay design, multiplexed staining (Cell Painting), liquid handling, robotic plate processing, and high-content imaging',
+      'Led preclinical studies evaluating proprietary therapeutic compounds in triple-negative breast cancer through a collaboration with pharme',
     ],
   },
 ]
 
 export const education = [
   {
-    degree: 'PhD Molecular Biosciences',
-    school: 'Universidad Autónoma de Madrid (UAM)',
+    degree: 'PhD in Molecular Biosciences',
+    school: 'Universidad Autónoma de Madrid (UAM), Spain',
     dates: '2014–2018',
     details: [
-      'Thesis: Role of stromal Caveolin-1 (CAV1) in breast cancer angiogenesis',
-      'Supervisor: Miguel Ángel del Pozo, CNIC',
-      'Defended 19 Oct 2018',
-      'La Caixa fellowship',
+      'Breast cancer biology and angiogenesis',
+      '"La Caixa" 2014 fellowship (5% success rate)',
+      'EMBO Short-Term and Bohringer Ingelheim Travel Grants'
     ],
   },
   {
-    degree: 'Master Molecular Medicine',
-    school: 'Universidad Autónoma de Madrid (UAM)',
+    degree: 'Master in Molecular Medicine',
+    school: 'Universidad Autónoma de Madrid (UAM), Spain',
     dates: '2012–2013',
     details: ['3.86 GPA', 'CNIC Master Programme Grant'],
+  },
+  {
+    degree: 'MSc in Biotechnology',
+    school: 'Universidad Francisco de Vitoria (UFV), Spain',
+    dates: '2007–2012',
+    details: [
+    ],
   },
 ]
 
