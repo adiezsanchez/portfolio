@@ -69,18 +69,47 @@ export const experience = [
     bullets: [
       'Designed and executed high-content perturbation screening assays, integrating genetic (siRNA) and chemical perturbations to investigate cancer biology',
       'Developed and optimized automated phenotypic screening workflows spanning assay design, multiplexed staining (Cell Painting), liquid handling, robotic plate processing, and high-content imaging',
-      'Led preclinical studies evaluating proprietary therapeutic compounds in triple-negative breast cancer through a collaboration with pharme',
+      'Led preclinical studies evaluating proprietary therapeutic compounds in triple-negative breast cancer through a collaboration with pharma',
     ],
   },
 ]
 
 export const education = [
+  
+  {
+    degree: 'Deep Learning for image analysis',
+    school: 'European Molecular Biology Laboratory (EMBL), Germany',
+    dates: 'June 2023',
+    details: [
+    ],
+  },
+  {
+    degree: 'Microscopy data analysis: Machine Learning',
+    school: 'European Bioinformatics Institute (EMBL-EBI), UK',
+    dates: 'May 2024',
+    details: [
+    ],
+  },
+  {
+    degree: 'Advanced Methods in Bioimage Analysis',
+    school: 'European Molecular Biology Organization (EMBO), online',
+    dates: 'September 2023',
+    details: [
+    ],
+  },
+  {
+    degree: 'Nextflow: Building reproducible and scalable data analysis workflows',
+    school: 'Seqera, online',
+    dates: 'December 2025',
+    details: [
+    ],
+  },
   {
     degree: 'PhD in Molecular Biosciences',
     school: 'Universidad Autónoma de Madrid (UAM), Spain',
     dates: '2014–2018',
     details: [
-      'Breast cancer biology and angiogenesis',
+      'High-throughput screening and tumor microenvironment',
       '"La Caixa" 2014 fellowship (5% success rate)',
       'EMBO Short-Term and Bohringer Ingelheim Travel Grants'
     ],
@@ -89,13 +118,23 @@ export const education = [
     degree: 'Master in Molecular Medicine',
     school: 'Universidad Autónoma de Madrid (UAM), Spain',
     dates: '2012–2013',
-    details: ['3.86 GPA', 'CNIC Master Programme Grant'],
+    details: [
+      'Breast cancer biology and angiogenesis',
+      '3.86 GPA', 
+      'CNIC Master Programme Grant'],
   },
   {
     degree: 'MSc in Biotechnology',
     school: 'Universidad Francisco de Vitoria (UFV), Spain',
     dates: '2007–2012',
-    details: [
+    details: ['3.84 GPA'
+    ],
+  },
+  {
+    degree: 'BSc in Biotechnology',
+    school: 'Technological University of the Shannon (TUS), Ireland',
+    dates: '2010–2011',
+    details: ['Distinction with First Class Honours'
     ],
   },
 ]
