@@ -46,8 +46,9 @@ export const experience = [
     bullets: [
       'Led CMIC Bioimage Analysis platform supporting +200 researchers',
       'Scaled HCS pipelines to HPC using Slurm/Nextflow (5–10× on multi-TB data)',
-      'DL pipelines: segmentation, object detection, representation learning (PyTorch, TensorFlow, CUDA)',
-      'FAIR data management: GitHub–Zenodo DOIs, BioImage Archive',
+      'Deep Learning & Computer Vision: segmentation, object detection, representation learning (PyTorch, TensorFlow, CUDA)',
+      'Data Science: ML, data visualization, feature extraction, clustering, dimensionality reduction',
+      'FAIR data management',
     ],
   },
   {
@@ -154,7 +155,23 @@ export const projects = [
     url: 'https://github.com/adiezsanchez/lisaoya_hcs_embed',
     keywords: ['Representation Learning', 'Embeddings', 'Autoencoders'],
     image: asset('projects/lisaoya_hcs_embed.png'),
-    blurb: 'Generation of biologically meaningful embeddings from High Content Imaging using DinoV3, autoencoders and a classification head',
+    blurb: 'Generation of biologically meaningful embeddings from High Content Imaging using DinoV3, autoencoders and a classification head. Dimensionality reduction for clustering and classification.',
+  },
+  {
+    name: 'Phenotypic profiling of Human Colon Organoids in 3D.',
+    aka: 'Pheno-HPC',
+    url: 'https://github.com/adiezsanchez/shreya_ibd_orgs',
+    keywords: ['HPC', 'CUDA + OpenCL', 'Cellpose'],
+    image: asset('projects/shreya_ibd_orgs.png'),
+    blurb: 'Cell and organoid segmentation with parent-child relationships and feature extraction for phenotypic profiling. HPC-ready with CUDA + OpenCL acceleration.',
+  },
+  {
+    name: 'siRNA-based HCS for Tuberculosis-mediated cell death',
+    aka: 'HCS-MTB',
+    url: 'https://github.com/adiezsanchez/lisaoya_hcs_mtb',
+    keywords: ['HCS', 'Phenotypic profiling', 'Perturbation screening'],
+    image: asset('projects/lisaoya_hcs_mtb.png'),
+    blurb: 'Hit detection in 2D fluorescence multichannel images derived from a siRNA HCS Assay. Tool developed for the Molecular Mechanisms of Mycobacterial and Viral Infections (MYCOVIR) lab.',
   },
   {
     name: 'Automated tissue-layer assignment and 3D root reconstruction',
