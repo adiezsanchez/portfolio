@@ -3,6 +3,20 @@
   background: var(--bg);
   color: var(--fg);
   font-family: 'Manrope', system-ui, sans-serif;
+
+  /*
+    Shared thumbnail overlay for project + conference pills.
+    Tweak these on .bold (or a single pill via inline style) without touching layout.
+
+    --pill-thumb-fade-end   Where the left→right fade becomes fully transparent
+                            (66% ≈ 2/3 of the pill width).
+    --pill-thumb-opacity    Overlay opacity after desaturation.
+    --pill-thumb-grayscale  0 = full color, 1 = fully desaturated.
+    --pill-thumb            Image URL; set per pill (inline) as url("…").
+  */
+  --pill-thumb-fade-end: 66%;
+  --pill-thumb-opacity: 0.35;
+  --pill-thumb-grayscale: 1;
 }
 
 .bold-nav {
@@ -188,13 +202,15 @@
 .bold-cards,
 .bold-edu,
 .bold-projects,
+.bold-conferences,
 .bold-pubs {
   display: grid;
   gap: 1rem;
 }
 
 .bold-cards,
-.bold-projects {
+.bold-projects,
+.bold-conferences {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -206,6 +222,7 @@
 .bold-cards article,
 .bold-edu article,
 .bold-projects a,
+.bold-conferences a,
 .bold-pubs a {
   background: var(--card);
   border: 2px solid var(--border);
@@ -220,10 +237,42 @@
 }
 
 .bold-projects a:hover,
+.bold-conferences a:hover,
 .bold-pubs a:hover,
 .bold-cards article:hover {
   transform: translateY(-6px);
   box-shadow: 8px 8px 0 var(--shadow);
+}
+
+.bold-media-pill {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.bold-media-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--pill-thumb);
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  filter: grayscale(var(--pill-thumb-grayscale));
+  opacity: var(--pill-thumb-opacity);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    transparent var(--pill-thumb-fade-end)
+  );
+  mask-image: linear-gradient(to right, #000 0%, transparent var(--pill-thumb-fade-end));
+}
+
+.bold-media-pill > * {
+  position: relative;
+  z-index: 1;
 }
 
 .bold-cards p,
@@ -252,15 +301,45 @@
 }
 
 .bold-projects span,
+.bold-conferences span,
 .bold-pubs b {
   color: var(--accent);
   font-size: 0.86rem;
+}
+
+.bold-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.38rem;
+  row-gap: 0.12rem;
+}
+
+.bold-keywords > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.bold-keywords i {
+  display: inline-flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0;
 }
 
 .bold-projects h3 i {
   font-style: normal;
   color: var(--muted);
   font-weight: 600;
+}
+
+.bold-conferences a {
+  min-height: 9.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .bold-projects p,
@@ -324,6 +403,7 @@
 @media (max-width: 980px) {
   .bold-cards,
   .bold-projects,
+  .bold-conferences,
   .bold-edu,
   .bold-pubs {
     grid-template-columns: 1fr;

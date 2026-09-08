@@ -1,4 +1,9 @@
-export const profileSrc = `${import.meta.env.BASE_URL}profile.jpg`
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+
+export const profiles = {
+  light: asset('profile-light.png'),
+  dark: asset('profile-dark.png'),
+}
 
 export const person = {
   name: 'Alberto Díez Sánchez',
@@ -25,6 +30,7 @@ export const sections = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'conferences', label: 'Conferences' },
   { id: 'education', label: 'Education' },
   { id: 'publications', label: 'Publications' },
   { id: 'skills', label: 'Skills' },
@@ -88,54 +94,81 @@ export const education = [
 export const projects = [
   {
     name: 'brain_tissue_nuc_segm',
-    stars: 9,
     url: 'https://github.com/adiezsanchez/brain_tissue_nuc_segm',
+    keywords: ['StarDist 3D', 'Cellpose', 'Nuclear segmentation'],
+    image: asset('projects/brain_tissue_nuc_segm.png'),
     blurb:
       'Segmentation of nuclear signals in fluorescently stained mouse brain tissue sections with a fine-tuned StarDist 3D model and/or Cellpose.',
   },
   {
     name: 'intestinal_organoid_brightfield_analysis',
-    stars: 6,
     url: 'https://github.com/adiezsanchez/intestinal_organoid_brightfield_analysis',
+    keywords: ['Brightfield', 'Organoids', 'Quantification'],
+    image: asset('projects/intestinal_organoid_brightfield_analysis.png'),
     blurb:
       'Tools to analyze intestinal organoid imaging at the Martín-Alonso / Oudhoff lab.',
   },
   {
     name: 'saramorg_fret_nroot',
-    stars: 3,
     url: 'https://github.com/adiezsanchez/saramorg_fret_nroot',
+    keywords: ['UNet3D', 'k-means clustering', 'Classification'],
+    image: asset('projects/saramorg_fret_nroot.png'),
     blurb:
       'Arabidopsis thaliana root FRET-ratio analysis in nuclei, 3D root reconstruction, and automatic tissue-layer assignment. Developed for the Functional Plant Biology group at NTNU.',
   },
   {
     name: 'intestinal_organoid_yolov8',
     aka: 'ISIS-BF-YOLO',
-    stars: 3,
     url: 'https://github.com/adiezsanchez/intestinal_organoid_yolov8',
+    keywords: ['YOLOv8', 'Instance segmentation', 'Organoids'],
+    image: asset('projects/intestinal_organoid_yolov8.png'),
     blurb:
       'AI tools (YOLOv8) to analyze intestinal organoid imaging at the Martín-Alonso / Oudhoff lab.',
   },
   {
     name: 'YAP_nuclear_3D_orgs',
     aka: 'YAP-LOC3D',
-    stars: 2,
     url: 'https://github.com/adiezsanchez/YAP_nuclear_3D_orgs',
+    keywords: ['CellposeSAM', 'Nuclear translocation', '3D organoids'],
+    image: asset('projects/YAP_nuclear_3D_orgs.png'),
     blurb:
       '3D nuclear translocation study of YAP in intestinal organoids. Developed for the Martín-Alonso Regeneration lab.',
   },
   {
     name: 'microglia_dna_damage',
-    stars: 1,
     url: 'https://github.com/adiezsanchez/microglia_dna_damage',
+    keywords: ['DNA damage', 'Microglia', 'Nuclei'],
+    image: asset('projects/microglia_dna_damage.png'),
     blurb: 'Python script to analyze DNA damage in microglial cells.',
   },
   {
     name: 'ClawBio',
-    stars: null,
-    featured: true,
     url: 'https://github.com/adiezsanchez/ClawBio',
+    keywords: ['AI agents', 'Bioinformatics', 'Reproducibility'],
+    image: asset('projects/ClawBio.png'),
     blurb:
       'Bioinformatics-native AI agent skill library. Local-first, privacy-focused, and reproducible. Featured recent work.',
+  },
+]
+
+export const conferences = [
+  {
+    title: 'Reproducible bioimage analysis pipelines using Pixi',
+    venue: 'I2K Conference',
+    url: 'https://www.youtube.com/watch?v=rw10YpY7k2I&t=47s',
+    image: asset('conferences/rw10YpY7k2I.jpg'),
+  },
+  {
+    title: 'Python for Bioimage Analysis',
+    venue: 'Online Workshop',
+    url: 'https://www.youtube.com/watch?v=tzdFuxF2E3U',
+    image: asset('conferences/tzdFuxF2E3U.jpg'),
+  },
+  {
+    title: 'NEUROSEG Self-Analytics Tool',
+    venue: 'Online Workshop',
+    url: 'https://www.youtube.com/watch?v=lJU8cnHMmPg',
+    image: asset('conferences/lJU8cnHMmPg.jpg'),
   },
 ]
 
