@@ -142,6 +142,33 @@ export const education = [
 
 export const projects = [
   {
+    name: 'DRIVE retinal vessel segmentation',
+    aka: 'DRIVE-VESSEL',
+    url: 'https://github.com/adiezsanchez/drive-retinal-vessel-seg',
+    keywords: ['U-Net', 'Classical → ML', 'Vessel morphology'],
+    image: asset('projects/drive-retinal-vessel-seg.png'),
+    blurb:
+      'Teaching Pixi + PyTorch CUDA pipeline on the DRIVE fundus benchmark: classical vesselness → pixel ML → U-Net, plus morphology biomarkers. Napari overlays and Plotly metrics; official DRIVE is not redistributed, with a synthetic demo included.',
+  },
+  {
+    name: 'ISIC 2018 skin lesion segmentation & classification',
+    aka: 'ISIC-LESION',
+    url: 'https://github.com/adiezsanchez/isic2018-skin-lesion',
+    keywords: ['U-Net', 'Grad-CAM', 'Transfer learning'],
+    image: asset('projects/isic2018-skin-lesion.png'),
+    blurb:
+      'Teaching ISIC 2018 Task 1 + Task 3 pipeline — lesion U-Net, 7-class transfer CNN with imbalance handling, Grad-CAM, and RF/XGBoost vs CNN comparison. Pixi + PyTorch CUDA, Napari and Plotly; synthetic demo data, official archives opt-in.',
+  },
+  {
+    name: 'ACDC cardiac MRI segmentation',
+    aka: 'ACDC-CINE',
+    url: 'https://github.com/adiezsanchez/acdc-cardiac-mri-seg',
+    keywords: ['2D / 2.5D / 3D', 'U-Net', 'Cardiac MRI'],
+    image: asset('projects/acdc-cardiac-mri-seg.png'),
+    blurb:
+      'Teaching multi-class short-axis cine-MRI segmentation (RV / MYO / LV) comparing 2D, neighbouring-slice 2.5D, and light 3D U-Nets as a curriculum on anisotropy. Pixi + PyTorch CUDA, Napari and Plotly; synthetic NIfTI demo, official ACDC not shipped.',
+  },
+  {
     name: 'Self-analytics tool for 3D segmentation of brain tissue',
     url: 'https://github.com/adiezsanchez/brain_tissue_nuc_segm',
     keywords: ['3D', 'Random Forest', 'Instance segmentation'],
