@@ -474,8 +474,8 @@
 
   @page {
     size: A4;
-    /* Applies on every page (incl. after print-page-break); cream fills the margin box */
-    margin: 12mm;
+    /* Extra bottom margin so fixed footer does not collide with content */
+    margin: 12mm 12mm 20mm;
     background: #f6f1ea;
   }
 
@@ -508,9 +508,33 @@
   }
 
   .bold-nav,
-  .bold-burger,
-  .bold-foot {
+  .bold-burger {
     display: none !important;
+  }
+
+  /*
+    Chrome repeats position:fixed elements on every printed page.
+    Line + name matches the on-screen footer look.
+  */
+  .bold-foot {
+    display: flex !important;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0.55rem 0 0.2rem;
+    border-top: 2px solid var(--border);
+    background: #f6f1ea;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--fg);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .bold-hero {
@@ -522,7 +546,7 @@
   }
 
   .bold-last {
-    padding-bottom: 0 !important;
+    padding-bottom: 1rem !important;
   }
 
   .bold h1 {

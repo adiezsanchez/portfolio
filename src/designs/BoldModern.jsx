@@ -6,6 +6,7 @@ import {
   person,
   profiles,
   projects,
+  projectsContinued,
   publications,
   sections,
   skills,
@@ -158,18 +159,38 @@ export default function BoldModern() {
       <section className="bold-block" id="projects">
         <h2 data-reveal>Selected projects</h2>
         <div className="bold-projects">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <a
               key={project.name}
               href={project.url}
               target="_blank"
               rel="noreferrer"
               data-reveal
-              className={
-                index === Math.ceil(projects.length / 2)
-                  ? 'bold-media-pill print-page-break'
-                  : 'bold-media-pill'
-              }
+              className="bold-media-pill"
+              style={pillThumbStyle(project.image)}
+            >
+              <KeywordLine keywords={project.keywords} />
+              <h3>
+                {project.name}
+                {project.aka ? <i> / {project.aka}</i> : null}
+              </h3>
+              <p>{project.blurb}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="bold-block print-page-break" id="projects-continued">
+        <h2 data-reveal>Selected projects</h2>
+        <div className="bold-projects">
+          {projectsContinued.map((project) => (
+            <a
+              key={project.name}
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              data-reveal
+              className="bold-media-pill"
               style={pillThumbStyle(project.image)}
             >
               <KeywordLine keywords={project.keywords} />

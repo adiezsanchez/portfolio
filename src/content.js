@@ -76,35 +76,6 @@ export const experience = [
 ]
 
 export const education = [
-  
-  {
-    degree: 'Deep Learning for image analysis',
-    school: 'European Molecular Biology Laboratory (EMBL), Germany',
-    dates: 'June 2023',
-    details: [
-    ],
-  },
-  {
-    degree: 'Microscopy data analysis: Machine Learning',
-    school: 'European Bioinformatics Institute (EMBL-EBI), UK',
-    dates: 'May 2024',
-    details: [
-    ],
-  },
-  {
-    degree: 'Advanced Methods in Bioimage Analysis',
-    school: 'European Molecular Biology Organization (EMBO), online',
-    dates: 'September 2023',
-    details: [
-    ],
-  },
-  {
-    degree: 'Nextflow: Building reproducible and scalable data analysis workflows',
-    school: 'Seqera, online',
-    dates: 'December 2025',
-    details: [
-    ],
-  },
   {
     degree: 'PhD in Molecular Biosciences',
     school: 'Universidad Autónoma de Madrid (UAM), Spain',
@@ -136,6 +107,34 @@ export const education = [
     school: 'Technological University of the Shannon (TUS), Ireland',
     dates: '2010–2011',
     details: ['Distinction with First Class Honours'
+    ],
+  },
+  {
+    degree: 'Deep Learning for image analysis',
+    school: 'European Molecular Biology Laboratory (EMBL), Germany',
+    dates: 'June 2023',
+    details: [
+    ],
+  },
+  {
+    degree: 'Microscopy data analysis: Machine Learning',
+    school: 'European Bioinformatics Institute (EMBL-EBI), UK',
+    dates: 'May 2024',
+    details: [
+    ],
+  },
+  {
+    degree: 'Advanced Methods in Bioimage Analysis',
+    school: 'European Molecular Biology Organization (EMBO), online',
+    dates: 'September 2023',
+    details: [
+    ],
+  },
+  {
+    degree: 'Nextflow: Building reproducible and scalable data analysis workflows',
+    school: 'Seqera, online',
+    dates: 'December 2025',
+    details: [
     ],
   },
 ]
@@ -191,6 +190,9 @@ export const projects = [
     blurb:
       'Analyzing the DRIVE fundus benchmark: classical vesselness → pixel ML → U-Net, plus morphology feature extraction. Napari overlays and Plotly metrics.',
   },
+]
+
+export const projectsContinued = [
   {
     name: 'ISIC 2018 skin lesion segmentation & classification',
     aka: 'ISIC-LESION',
