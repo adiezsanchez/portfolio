@@ -27,6 +27,17 @@ The Vite `base` is `/portfolio/` so the app is served at:
 
 Open that URL (not the bare `/`).
 
+## Print CV
+
+Use the `printed_version` branch (print layout and page breaks). Keep `main` for the live site.
+
+```bash
+git checkout printed_version
+npm run dev
+```
+
+Then open **http://localhost:5173/portfolio/** and use Chrome/Edge **Print → Save as PDF**. Switch back with `git checkout main` when finished.
+
 ## Production build
 
 ```bash
