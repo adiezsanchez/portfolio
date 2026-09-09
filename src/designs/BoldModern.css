@@ -17,7 +17,7 @@
   */
   --pill-thumb-fade-end: 66%;
   --pill-thumb-opacity: 0.35;
-  --pill-thumb-grayscale: 1;
+  --pill-thumb-grayscale: 0;
 }
 
 .bold-nav {
