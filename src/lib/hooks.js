@@ -39,20 +39,46 @@ export function useRevealOnScroll() {
       return undefined
     }
 
+    const reveal = (node) => {
+      node.classList.add('is-in')
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-in')
+            reveal(entry.target)
             observer.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      // Positive bottom margin so late-page items (e.g. Contact social pills) still reveal
+      { threshold: 0.08, rootMargin: '0px 0px 12% 0px' },
     )
 
     nodes.forEach((node) => observer.observe(node))
-    return () => observer.disconnect()
+
+    const revealRemainingIfNearEnd = () => {
+      const doc = document.documentElement
+      const remaining = doc.scrollHeight - (window.scrollY + window.innerHeight)
+      if (remaining > 120) return
+      nodes.forEach((node) => {
+        if (!node.classList.contains('is-in')) {
+          reveal(node)
+          observer.unobserve(node)
+        }
+      })
+    }
+
+    window.addEventListener('scroll', revealRemainingIfNearEnd, { passive: true })
+    window.addEventListener('resize', revealRemainingIfNearEnd)
+    revealRemainingIfNearEnd()
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', revealRemainingIfNearEnd)
+      window.removeEventListener('resize', revealRemainingIfNearEnd)
+    }
   }, [])
 }
 

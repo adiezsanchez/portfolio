@@ -10,7 +10,7 @@ export const person = {
   degree: 'PhD',
   title: 'Data Scientist · Biomedical Image Analysis · Computer Vision · ML/AI x Bio',
   tagline:
-    'AI-driven bioimage analysis pipelines for high-content microscopy',
+    'AI-driven computer vision pipelines for biomedical image analysis',
   location: 'Trondheim, Norway',
   email: 'adiezsanchez@pm.me',
   phone: '+47 413 74 790',
@@ -20,6 +20,7 @@ export const person = {
 }
 
 export const links = {
+  portfolio: 'https://adiezsanchez.github.io/portfolio/',
   linkedin: 'https://www.linkedin.com/in/adiezbiotech',
   github: 'https://github.com/adiezsanchez',
   ntnu: 'https://www.ntnu.edu/employees/alberto.d.sanchez',

@@ -7,6 +7,15 @@ const svgProps = {
   focusable: 'false',
 }
 
+/** Monogram matching the top-nav ADS logo mark. */
+export function AdsIcon() {
+  return (
+    <span className="brand-icon ads-mark" aria-hidden="true">
+      ADS
+    </span>
+  )
+}
+
 export function LinkedInIcon() {
   return (
     <svg {...svgProps} className="brand-icon" viewBox="0 0 24 24">

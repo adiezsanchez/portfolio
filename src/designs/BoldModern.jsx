@@ -12,7 +12,7 @@ import {
   skills,
 } from '../content.js'
 import { doiHref, scrollToId, useHashScroll, useMobileNav, useRevealOnScroll, useTheme } from '../lib/hooks.js'
-import { GitHubIcon, LinkedInIcon, MoonIcon, NtnuIcon, OrcidIcon, SunIcon } from '../lib/icons.jsx'
+import { AdsIcon, GitHubIcon, LinkedInIcon, MoonIcon, NtnuIcon, OrcidIcon, SunIcon } from '../lib/icons.jsx'
 import './BoldModern.css'
 
 function pillThumbStyle(src) {
@@ -35,6 +35,10 @@ function KeywordLine({ keywords }) {
 function SocialLinks({ className }) {
   return (
     <div className={className}>
+      <a href={links.portfolio} target="_blank" rel="noreferrer">
+        <AdsIcon />
+        Portfolio
+      </a>
       <a href={links.linkedin} target="_blank" rel="noreferrer">
         <LinkedInIcon />
         LinkedIn
@@ -107,16 +111,26 @@ export default function BoldModern() {
           {person.title}
         </p>
         <h1 data-reveal>
-          {person.name}, {person.degree}
+          <a className="bold-name-link" href={links.portfolio} target="_blank" rel="noreferrer">
+            {person.name}, {person.degree}
+          </a>
         </h1>
         <div className="bold-hero-row">
-          <img
-            src={dark ? profiles.dark : profiles.light}
-            alt={`Portrait of ${person.name}`}
-            width="280"
-            height="280"
+          <a
+            className="bold-hero-photo"
+            href={links.portfolio}
+            target="_blank"
+            rel="noreferrer"
             data-reveal
-          />
+            aria-label={`Open ${person.name}'s portfolio website`}
+          >
+            <img
+              src={dark ? profiles.dark : profiles.light}
+              alt={`Portrait of ${person.name}`}
+              width="280"
+              height="280"
+            />
+          </a>
           <div>
             <p className="bold-tag" data-reveal>
               {person.tagline}
