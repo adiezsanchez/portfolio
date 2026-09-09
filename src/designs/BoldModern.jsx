@@ -158,14 +158,18 @@ export default function BoldModern() {
       <section className="bold-block" id="projects">
         <h2 data-reveal>Selected projects</h2>
         <div className="bold-projects">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <a
               key={project.name}
               href={project.url}
               target="_blank"
               rel="noreferrer"
               data-reveal
-              className="bold-media-pill"
+              className={
+                index === Math.ceil(projects.length / 2)
+                  ? 'bold-media-pill print-page-break'
+                  : 'bold-media-pill'
+              }
               style={pillThumbStyle(project.image)}
             >
               <KeywordLine keywords={project.keywords} />
@@ -217,7 +221,7 @@ export default function BoldModern() {
         </div>
       </section>
 
-      <section className="bold-block" id="publications">
+      <section className="bold-block print-page-break" id="publications">
         <h2 data-reveal>Publications</h2>
         <div className="bold-pubs">
           {publications.map((pub) => (

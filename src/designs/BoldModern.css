@@ -442,3 +442,262 @@
     display: flex;
   }
 }
+
+/*
+  CV export: Chrome/Edge → Print → Save as PDF (keeps hyperlinks).
+  Page 1: Bio + Experience + first half of projects
+  Page 2: Remaining projects + Conferences + Education
+  Page 3: Publications + Skills + Contact
+
+  Keep the on-screen Bold Modern look (large hero, section titles, card rhythm).
+  Force multi-column grids: Chrome's print width is <980px and would otherwise
+  collapse to the mobile single-column layout.
+*/
+@media print {
+  :root,
+  :root[data-theme='dark'] {
+    color-scheme: light;
+    --bg: #f6f1ea;
+    --fg: #14110f;
+    --muted: #6b625a;
+    --accent: #e85c3a;
+    --accent-strong: #c94a2b;
+    --accent-fg: #fff;
+    --card: #fff;
+    --border: #14110f;
+    --shadow: #14110f;
+    --nav-bg: #f6f1ea;
+    --nav-solid: #f6f1ea;
+    --skill-bg: #14110f;
+    --skill-fg: #f6f1ea;
+  }
+
+  @page {
+    size: A4;
+    /* Applies on every page (incl. after print-page-break); cream fills the margin box */
+    margin: 12mm;
+    background: #f6f1ea;
+  }
+
+  html {
+    scroll-behavior: auto;
+    background: #f6f1ea !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    /* Scale the whole page so cream fills edge-to-edge (not a shrunk island) */
+    zoom: 0.72;
+  }
+
+  body,
+  #root {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100%;
+    background: #f6f1ea !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bold {
+    background: #f6f1ea !important;
+    color: var(--fg);
+    box-sizing: border-box;
+    min-height: 100%;
+    /* Inset comes from @page margin so pages 2–3 get the same top spacing */
+    padding: 0;
+  }
+
+  .bold-nav,
+  .bold-burger,
+  .bold-foot {
+    display: none !important;
+  }
+
+  .bold-hero {
+    padding: 1.2rem 0 0.8rem !important;
+  }
+
+  .bold-block {
+    padding: 1.1rem 0 !important;
+  }
+
+  .bold-last {
+    padding-bottom: 0 !important;
+  }
+
+  .bold h1 {
+    margin: 0.25rem 0 0.9rem;
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  .bold h2 {
+    margin: 0 0 0.85rem;
+    font-size: 2rem !important;
+    letter-spacing: -0.05em;
+  }
+
+  .bold h3 {
+    margin: 0.35rem 0 0;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .bold-hero-row {
+    grid-template-columns: 200px 1fr !important;
+    gap: 1.6rem !important;
+    align-items: start;
+  }
+
+  .bold-hero-row > img {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 22px;
+    border-width: 3px;
+  }
+
+  .bold-tag {
+    font-size: 1.15rem;
+    max-width: 28rem;
+  }
+
+  .bold-summary {
+    margin: 0.75rem 0 0;
+    max-width: 40rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .bold-chips {
+    gap: 0.45rem;
+    margin-top: 0.85rem;
+  }
+
+  .bold-chips > a,
+  .bold-chips > span {
+    border-width: 2px;
+    padding: 0.28rem 0.7rem;
+    font-size: 0.82rem;
+    background: var(--card);
+  }
+
+  .brand-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Desktop grids — override mobile @media (max-width: 980px) */
+  .bold-cards,
+  .bold-projects,
+  .bold-conferences {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  .bold-edu,
+  .bold-pubs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  .bold-cards article,
+  .bold-edu article,
+  .bold-projects a,
+  .bold-conferences a,
+  .bold-pubs a {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 0.85rem 0.95rem 0.95rem !important;
+    box-shadow: none !important;
+    transform: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bold-projects a:hover,
+  .bold-conferences a:hover,
+  .bold-pubs a:hover,
+  .bold-cards article:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .bold-cards p,
+  .bold-edu p {
+    font-size: 0.8rem;
+  }
+
+  .bold-projects span,
+  .bold-conferences span,
+  .bold-pubs b {
+    font-size: 0.78rem;
+  }
+
+  .bold-org {
+    margin-top: 0.25rem !important;
+  }
+
+  .bold ul {
+    margin: 0.55rem 0 0;
+    padding-left: 1rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .bold-edu ul:not(:has(li)) {
+    display: none;
+  }
+
+  .bold-projects p {
+    margin: 0.45rem 0 0;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .bold-pubs span,
+  .bold-pubs small {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .bold-skills {
+    gap: 0.4rem;
+  }
+
+  .bold-skills span {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .bold [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* No project/conference thumbnail overlays when printing */
+  .bold-media-pill::before {
+    display: none !important;
+    content: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+  }
+
+  .print-page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .bold-chips a,
+  .bold-social a {
+    text-decoration: none;
+  }
+}
